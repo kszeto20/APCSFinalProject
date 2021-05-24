@@ -8,16 +8,16 @@ public class Player{
   }
   
   void move(){
-    if(keyPressed == true && keyCode == 37 && xCor > 30){
+    if(keyCode == 37 && xCor > 30){
         xCor -= 10;
      }
-     if(keyPressed == true && keyCode == 39 && xCor < width - 30){
+     if(keyCode == 39 && xCor < width - 30){
        xCor += 10;
      }
-     if(keyPressed == true && keyCode == 38 &&  yCor > 10){
+     if(keyCode == 38 &&  yCor > 10){
        yCor -= 10;
      }
-     if(keyPressed == true && keyCode == 40 && yCor < height - 50){
+     if(keyCode == 40 && yCor < height - 50){
        yCor += 10;
      }
    }    
