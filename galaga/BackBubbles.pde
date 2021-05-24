@@ -4,9 +4,9 @@ public class BackBubbles {
   float yMax;
   float y;
   BackBubbles(int w, int h) {
-    xCor = (float) (Math.random() * w);
+    xCor = (float) (random(w));
     yMax = (float) (h);
-    y = (float) (Math.random() * h);
+    y = (float) (random(h));
   }
   
   void move() {
@@ -22,9 +22,8 @@ public class BackBubbles {
   }
   
   void display() {
-    //int mult = (int)Math.random() * 225;
-    //color newC = color(mult);
-    fill(225);
+    color newC = color(random(255), random(255), random(255));
+    fill(newC);
     ellipse(xCor, y, 5, 5);
   }
   
