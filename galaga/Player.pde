@@ -14,12 +14,6 @@ public class Player{
      if(keyCode == 39 && xCor < width - 30){
        xCor += 10;
      }
-     if(keyCode == 38 &&  yCor > 10){
-       yCor -= 10;
-     }
-     if(keyCode == 40 && yCor < height - 50){
-       yCor += 10;
-     }
    }    
   
   
