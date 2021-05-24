@@ -3,6 +3,7 @@ public class BackBubbles {
   float xCor;
   float yMax;
   float y;
+  
   BackBubbles(int w, int h) {
     xCor = (float) (random(w));
     yMax = (float) (h);
