@@ -15,12 +15,14 @@ void draw() {
   background(0);
   fill(255);
   textSize(50);
-  text("\nGalaga so far", 430, 0);
+  text("\nGalaga so far", width / 3, 0);
   for (BackBubbles b : backs) {
     b.move();
     b.display();
   }
-  control.move();
+  if(keyPressed){
+    control.move();
+  }
   control.display();
 }
 
