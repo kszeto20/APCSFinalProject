@@ -4,7 +4,7 @@ void setup() {
   size (1000,1000);
   
   backs = new ArrayList<BackBubbles>();
-  for (int i = 0; i < width / 2; i++) {
+  for (int i = 0; i < width / 5; i++) {
     backs.add(new BackBubbles(width, height));
   }
 }
