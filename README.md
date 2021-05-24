@@ -1,7 +1,7 @@
 # APCSFinalProject
 Here's the prototype doc
 
-Group name: (TBD)
+Group name: Galago
 
 Members: Jonathan Ho, Kirsten Szeto
 
