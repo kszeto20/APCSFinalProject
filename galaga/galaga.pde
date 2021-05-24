@@ -5,7 +5,7 @@ void setup() {
   size (800,800);
   
   backs = new ArrayList<BackBubbles>();
-  for (int i = 0; i < width / 2; i++) {
+  for (int i = 0; i < width / 5; i++) {
     backs.add(new BackBubbles(width, height));
   }
   control = new Player(width, height);
