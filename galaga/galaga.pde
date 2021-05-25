@@ -42,6 +42,7 @@ void draw() {
       e.move();
       if(prob < 1){
         e.shoot();
+        e.shoot();
       }
       e.display();
     }
@@ -119,5 +120,5 @@ void keyReleased() {
 
 /*
 DEBUG NOTES:
-next session - bullets? (05/25)
+next session - actual attacks (05/25)
 */
