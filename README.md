@@ -16,4 +16,4 @@ May 24th- created a basic UML diagram showing the relationships that classes and
 
 added a push to start feature, movements limited to left right motion to model the actual game
 
-May 25th - movements now expanded again to include left, right, up, down; movement is smooth for player; will implement bullet class and enemy class later; might need to move some methods back into player class.
+May 25th - movements now expanded again to include left, right, up, down; movement is smooth for player; will implement bullet class and enemy class later; might need to move some methods back into player class. (edit: bullets work, will work on removing bullets from array list later; update: move method works best in driver class)
