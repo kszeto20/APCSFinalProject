@@ -4,7 +4,7 @@ Player control;
 int[] sButton = {300, 370, 200, 50, 0};
 ArrayList<Bullet> bullets;
 ArrayList<Bullet> otherBullets;
-int timeCount;
+ArrayList<Enemy> enemies;
 
 void setup() {
   frameRate(60);
@@ -17,7 +17,10 @@ void setup() {
   control = new Player(width, height);
   bullets = new ArrayList<Bullet>();
   otherBullets = new ArrayList<Bullet>();  
-  timeCount = 0;
+  enemies = new ArrayList<Enemy>();
+  for (int i = 0; i < width / 5; i++) {
+    enemies.add(new Enemy(width, height));
+  }
 }
 
 void draw() {
@@ -34,6 +37,9 @@ void draw() {
   }
   else if (sButton[4] == 1) {
     control.display();
+    for (Enemy e : enemies) {
+      e.display();
+    }
     if(keyPressed){
       moveP(control);
     }
@@ -66,7 +72,6 @@ void moveP(Player control) {
 }
 
 void keyPressed() {
-  timeCount++;
   if (keyCode == 37) {
     control.left = true;
   }
