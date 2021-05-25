@@ -31,13 +31,13 @@ public class Enemy{
     xCor += dx;
     // flip dir when bounds are touched
     // left bound
-    if (xCor < width * 0.2) {
-      xCor = width * 0.2 + 1;
+    if (xCor < width * 0.3) {
+      xCor = width * 0.3 + 1;
       dx *= -1;
     }
     //right bound
-    if (xCor > width * 0.8) {
-      xCor = width * 0.8 - 1;
+    if (xCor > width * 0.7) {
+      xCor = width * 0.7 - 1;
       dx *= -1; 
     }
     // loops back to the top
