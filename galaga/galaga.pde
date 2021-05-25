@@ -18,7 +18,7 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
-  for (int i = 0; i < width / 5; i++) {
+  for (int i = 0; i < 1; i++) {
     enemies.add(new Enemy(width, height));
   }
 }
@@ -37,7 +37,12 @@ void draw() {
   }
   else if (sButton[4] == 1) {
     control.display();
+    double prob = Math.random();
     for (Enemy e : enemies) {
+      e.move();
+      if(prob < 0.05){
+        e.shoot();
+      }
       e.display();
     }
     if(keyPressed){
