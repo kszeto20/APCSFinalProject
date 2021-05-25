@@ -1,4 +1,6 @@
 public class Player{
+  float xMax;
+  float yMax;
   float xCor;
   float yCor;
   boolean left;
@@ -8,6 +10,8 @@ public class Player{
   
   
   Player(float w, float h){
+    xMax = w;
+    yMax = h;
     xCor = w / 2;
     yCor = h * 0.9;
     left = false;
@@ -22,7 +26,7 @@ public class Player{
     fill(0);
     ellipse(xCor + 5, yCor + 20, 2, 2);
     ellipse(xCor - 5, yCor + 20, 2, 2);
-    rect(xCor - 5, yCor + 30, 10, 2);       
+    rect(xCor - 5, yCor + 30, 10, 2);
     for (Bullet b : bullets) {
       b.move();
       b.display();
@@ -33,4 +37,5 @@ public class Player{
     Bullet toAdd = new Bullet(xCor, yCor, 0);
     bullets.add(toAdd);
   }
+  
 }

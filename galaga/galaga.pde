@@ -120,5 +120,5 @@ void keyReleased() {
 
 /*
 DEBUG NOTES:
-next session - bullets? (05/25)
+next session - actual attacks (05/25)
 */
