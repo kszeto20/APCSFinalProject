@@ -13,3 +13,7 @@ Devlog
 May 23rd- began working on the project.  Made the prototype document and started on the actual code.  Made the background stars and coded basic movement for the player ship.  Movement is still janky as the directions of the movement messes up when doing sequential moves
 
 May 24th- created a basic UML diagram showing the relationships that classes and objects have towards each other.
+
+added a push to start feature, movements limited to left right motion to model the actual game
+
+May 25th - movements now expanded again to include left, right, up, down; movement is smooth for player; will implement bullet class and enemy class later; might need to move some methods back into player class.
