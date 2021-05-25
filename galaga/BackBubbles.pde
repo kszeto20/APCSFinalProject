@@ -5,12 +5,13 @@ public class BackBubbles {
   float yMax;
   float yCor;
   color baseC;
+  
   BackBubbles(int w, int h) {
     xMax = w;
     xCor = (float) (random(w));
     yMax = (float) (h);
-    yCor= (float) (random(h));
-    baseC = color(random(255), random(255), random(255));
+    yCor = (float) (random(h));
+    baseC = color(random(255), random(255), random(255));  
   }
   
   void move() {
@@ -25,9 +26,9 @@ public class BackBubbles {
     else {
       toAdd *= mult;
     }
-    yCor+= (float)toAdd;
-    if (yCor> yMax) {
-      yCor= 0;
+    yCor += (float)toAdd;
+    if (yCor > yMax) {
+      yCor = 0;
       baseC = color(random(255), random(255), random(255));
     }
   }

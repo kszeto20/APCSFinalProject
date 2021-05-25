@@ -3,12 +3,14 @@ public class Enemy{
   float yCor;
   float dx;
   float dy;
+  float yMax;
 
   Enemy(float w, float h){
+    yMax = h;
     xCor = w / 2;
     yCor = h * 0.1;
     dx = 5;
-    dy = 5;
+    dy = 50;
   }
   
   void display(){
@@ -26,16 +28,31 @@ public class Enemy{
   }
  
   void move(){
-    if(xCor <= width / 2  && xCor > 30){
-      xCor -= dx;
+    xCor += dx;
+    // flip dir when bounds are touched
+    // left bound
+    if (xCor < width * 0.2) {
+      xCor = width * 0.2 + 1;
+      dx *= -1;
+      yCor += dy;
     }
-    if(xCor == width / 2 - 200){
-      xCor += dx + 5;
+    //right bound
+    if (xCor > width * 0.8) {
+      xCor = width * 0.8 - 1;
+      dx *= -1;
+      yCor += dy;
+    }
+    // loops back to the top
+    if (yCor > yMax) {
+      yCor = yMax * 0.1;
     }
   }
   
   void shoot(){
-    Bullet toAdd = new Bullet(xCor, yCor - 30, 1);
-    otherBullets.add(toAdd);
+    double r = random(10);
+    if (r < 2) {
+      Bullet toAdd = new Bullet(xCor, yCor - 30, 1);
+      otherBullets.add(toAdd);
+    }
   }
 }
