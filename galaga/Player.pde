@@ -1,21 +1,24 @@
 public class Player{
+  float xMax;
+  float yMax;
   float xCor;
   float yCor;
+  boolean left;
+  boolean right;
+  boolean up;
+  boolean down;
+  
   
   Player(float w, float h){
+    xMax = w;
+    yMax = h;
     xCor = w / 2;
     yCor = h * 0.9;
+    left = false;
+    right = false;
+    up = false;
+    down = false;
   }
-  
-  void move(){
-    if(keyCode == 37 && xCor > 30){
-        xCor -= 10;
-     }
-     if(keyCode == 39 && xCor < width - 30){
-       xCor += 10;
-     }
-   }    
-  
   
   void display(){
     fill(255);
@@ -24,6 +27,15 @@ public class Player{
     ellipse(xCor + 5, yCor + 20, 2, 2);
     ellipse(xCor - 5, yCor + 20, 2, 2);
     rect(xCor - 5, yCor + 30, 10, 2);
+    //for (Bullet b : bullets) {
+    //  b.move();
+    //  b.display();
+    //}
   }
+  
+  //void shoot() {
+  //  Bullet toAdd = new Bullet(xMax, yMax, xCor, yCor, 0);
+  //  bullets.add(toAdd);
+  //}
   
 }

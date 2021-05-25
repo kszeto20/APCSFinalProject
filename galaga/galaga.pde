@@ -2,6 +2,7 @@ ArrayList<BackBubbles> backs;
 Player control;
 // start button = xcor, ycor, width, height, 0 = not pressed + 1 = pressed
 int[] sButton = {0, 0, 200, 50, 0};
+ArrayList<Bullet> bullets;
 
 void setup() {
   frameRate(60);
@@ -12,6 +13,7 @@ void setup() {
     backs.add(new BackBubbles(width, height));
   }
   control = new Player(width, height);
+  bullets = new ArrayList<Bullet>();
 }
 
 void draw() {
@@ -20,24 +22,24 @@ void draw() {
   if (sButton[4] == 0) {
     fill(255);
     textSize(50);
-    text("\nGalaga so far", width / 3, 0);
+    text("\nGalaga so far", 250, height / 3);
     fill(#FFD6D9);
     rect(sButton[0], sButton[1], sButton[2], sButton[3]);
     fill(#FF0318);
     textSize(18);
     text("PRESS HERE TO START", 0, 30);
   }
-  else if (sButton[4] == 1) { 
+  else if (sButton[4] == 1) {
+    control.display();
+    if(keyPressed){
+      moveP(control);
+    }
   }
   
   for (BackBubbles b : backs) {
     b.move();
     b.display();
   }
-  if(keyPressed){
-    control.move();
-  }
-  control.display();
 }
 
 void mousePressed() {
@@ -46,10 +48,63 @@ void mousePressed() {
   }
 }
 
+void moveP(Player control) {
+  if (control.left && control.xCor > 30) {
+    control.xCor -= 10;
+  }
+  if (control.right && control.xCor < width - 30) {
+    control.xCor += 10;
+  }
+  if (control.up && control.yCor > 10) {
+    control.yCor -= 10;
+  }
+  if (control.down && control.yCor < height - 50) {
+    control.yCor += 10;
+  }
+}
+
+void keyPressed() {
+  if (keyCode == 37) {
+    control.left = true;
+  }
+  else if (keyCode == 38) {
+    control.up = true;
+  }
+  else if (keyCode == 40) {
+    control.down = true;
+  }
+  else {
+    if (keyCode == 39) {
+      control.right = true;
+    }
+    else {
+      if (keyCode == ' ') {
+        control.shoot();
+      }
+    }
+  }
+}
+ 
+void keyReleased() {
+  if (keyCode == 37) {
+    control.left = false;
+  }
+  else if (keyCode == 38) {
+    control.up = false;
+  }
+  else if (keyCode == 40) {
+    control.down = false;
+  }
+  else {
+    if (keyCode == 39) {
+      control.right = false;
+    }
+  }
+} 
 
 
 
 /*
 DEBUG NOTES:
-next session - make player controlled plane + bullets? (05/23)
+next session - bullets? (05/25)
 */
