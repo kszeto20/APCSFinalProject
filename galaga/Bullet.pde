@@ -1,14 +1,10 @@
-public class Bullet {
-  float xMax;
-  float yMax;
-  float xCor;
+public class Bullet{ 
+  float xCor;  
   float yCor;
   float yCorOG;
   float typeP;
   
-  Bullet(float xMax, float yMax, float x, float y, float type) {
-    this.xMax = xMax;
-    this.yMax = yMax;
+  Bullet(float x, float y, float type) {
     xCor = x;
     yCor = y;
     // type = type of plane (enemy / player); 0 == player type, 1 == enemy type
@@ -21,15 +17,12 @@ public class Bullet {
     rect(xCor - 2, yCor, 5, 20, 2);
   }
   
-  void move() {
+  void move(){  
     if (typeP == 0) {
       yCor -= 10;
     }
     else if (typeP == 1) {
       yCor += 10;
-    }
-    if (yCor > yMax || yCor < 0) {
-      bullets.remove(this);
     }
   }
   // neeed a collide method with arraylist of all enemy ships

@@ -3,6 +3,8 @@ Player control;
 // start button = xcor, ycor, width, height, 0 = not pressed + 1 = pressed
 int[] sButton = {300, 370, 200, 50, 0};
 ArrayList<Bullet> bullets;
+ArrayList<Bullet> otherBullets;
+int timeCount;
 
 void setup() {
   frameRate(60);
@@ -14,11 +16,12 @@ void setup() {
   }
   control = new Player(width, height);
   bullets = new ArrayList<Bullet>();
+  otherBullets = new ArrayList<Bullet>();  
+  timeCount = 0;
 }
 
 void draw() {
   background(0);
-  
   if (sButton[4] == 0) {
     fill(255);
     textSize(50);
@@ -35,7 +38,6 @@ void draw() {
       moveP(control);
     }
   }
-  
   for (BackBubbles b : backs) {
     b.move();
     b.display();
@@ -64,7 +66,7 @@ void moveP(Player control) {
 }
 
 void keyPressed() {
-  println(keyCode); 
+  timeCount++;
   if (keyCode == 37) {
     control.left = true;
   }

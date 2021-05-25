@@ -1,6 +1,4 @@
 public class Player{
-  float xMax;
-  float yMax;
   float xCor;
   float yCor;
   boolean left;
@@ -10,8 +8,6 @@ public class Player{
   
   
   Player(float w, float h){
-    xMax = w;
-    yMax = h;
     xCor = w / 2;
     yCor = h * 0.9;
     left = false;
@@ -27,15 +23,17 @@ public class Player{
     ellipse(xCor + 5, yCor + 20, 2, 2);
     ellipse(xCor - 5, yCor + 20, 2, 2);
     rect(xCor - 5, yCor + 30, 10, 2);
-    for (Bullet b : bullets) {
-      b.move();
-      b.display();
-    }
+     for (int i = 0;i < bullets.size();i++) {
+       bullets.get(i).move();
+       bullets.get(i).display();
+       if(bullets.get(i).yCor > height){
+         bullets.remove(i);
+       }
+     }
   }
   
   void shoot() {
-    Bullet toAdd = new Bullet(xMax, yMax, xCor, yCor, 0);
+    Bullet toAdd = new Bullet(xCor, yCor, 0);
     bullets.add(toAdd);
   }
-  
 }
