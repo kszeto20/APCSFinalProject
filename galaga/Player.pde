@@ -22,14 +22,11 @@ public class Player{
     fill(0);
     ellipse(xCor + 5, yCor + 20, 2, 2);
     ellipse(xCor - 5, yCor + 20, 2, 2);
-    rect(xCor - 5, yCor + 30, 10, 2);
-     for (int i = 0;i < bullets.size();i++) {
-       bullets.get(i).move();
-       bullets.get(i).display();
-       if(bullets.get(i).yCor > height){
-         bullets.remove(i);
-       }
-     }
+    rect(xCor - 5, yCor + 30, 10, 2);       
+    for (Bullet b : bullets) {
+      b.move();
+      b.display();
+    }
   }
   
   void shoot() {

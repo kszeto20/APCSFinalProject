@@ -19,10 +19,10 @@ public class Bullet{
   
   void move(){  
     if (typeP == 0) {
-      yCor -= 10;
+      yCor -= 25;
     }
     else if (typeP == 1) {
-      yCor += 10;
+      yCor += 25;
     }
   }
   // neeed a collide method with arraylist of all enemy ships

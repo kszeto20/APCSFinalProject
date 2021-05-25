@@ -5,6 +5,7 @@ public class BackBubbles {
   float yMax;
   float y;
   color baseC;
+  
   BackBubbles(int w, int h) {
     xMax = w;
     xCor = (float) (random(w));
