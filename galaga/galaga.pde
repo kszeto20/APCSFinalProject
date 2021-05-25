@@ -3,6 +3,8 @@ Player control;
 // start button = xcor, ycor, width, height, 0 = not pressed + 1 = pressed
 int[] sButton = {300, 370, 200, 50, 0};
 ArrayList<Bullet> bullets;
+ArrayList<Bullet> otherBullets;
+ArrayList<Enemy> enemies;
 
 void setup() {
   frameRate(60);
@@ -14,11 +16,15 @@ void setup() {
   }
   control = new Player(width, height);
   bullets = new ArrayList<Bullet>();
+  otherBullets = new ArrayList<Bullet>();  
+  enemies = new ArrayList<Enemy>();
+  for (int i = 0; i < width / 5; i++) {
+    enemies.add(new Enemy(width, height));
+  }
 }
 
 void draw() {
   background(0);
-  
   if (sButton[4] == 0) {
     fill(255);
     textSize(50);
@@ -31,11 +37,13 @@ void draw() {
   }
   else if (sButton[4] == 1) {
     control.display();
+    for (Enemy e : enemies) {
+      e.display();
+    }
     if(keyPressed){
       moveP(control);
     }
   }
-  
   for (BackBubbles b : backs) {
     b.move();
     b.display();
@@ -64,7 +72,6 @@ void moveP(Player control) {
 }
 
 void keyPressed() {
-  println(keyCode); 
   if (keyCode == 37) {
     control.left = true;
   }
