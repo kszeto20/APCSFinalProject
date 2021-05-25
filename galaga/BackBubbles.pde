@@ -3,13 +3,13 @@ public class BackBubbles {
   float xCor;
   float xMax;
   float yMax;
-  float y;
+  float yCor;
   color baseC;
   BackBubbles(int w, int h) {
     xMax = w;
     xCor = (float) (random(w));
     yMax = (float) (h);
-    y = (float) (random(h));
+    yCor= (float) (random(h));
     baseC = color(random(255), random(255), random(255));
   }
   
@@ -17,17 +17,17 @@ public class BackBubbles {
     double toAdd = 10;
     double mult = Math.random();
     if (mult < 0.3) {
-      toAdd = mult * (yMax / 200);
+      toAdd = mult * (yMax / 10);
     }
     else if (mult < 0.6) {
-      toAdd = mult * (yMax / 100);
+      toAdd = mult * (yMax / 15);
     }
     else {
       toAdd *= mult;
     }
-    y += (float)toAdd;
-    if (y > yMax) {
-      y = 0;
+    yCor+= (float)toAdd;
+    if (yCor> yMax) {
+      yCor= 0;
       baseC = color(random(255), random(255), random(255));
     }
   }
@@ -35,7 +35,7 @@ public class BackBubbles {
   void display() {
     
     fill(baseC);
-    ellipse(xCor, y, 3, 3);
+    ellipse(xCor, yCor, 3, 3);
   }
   
 }
