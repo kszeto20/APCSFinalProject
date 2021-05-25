@@ -1,7 +1,6 @@
 public class Bullet{ 
   float xCor;  
   float yCor;
-  float yCorOG;
   float typeP;
   
   Bullet(float x, float y, float type) {
@@ -13,8 +12,15 @@ public class Bullet{
   }
   
   void display() {
-    fill(255, 0, 0);
-    rect(xCor - 2, yCor, 5, 20, 2);
+    if (typeP == 0) {
+      fill(255, 0, 0);
+      rect(xCor - 2, yCor, 5, 20, 2);
+    }
+    else if (typeP == 1) {
+      fill(252, 8, 44);
+      rect(xCor - 2, yCor, 5, 20, 2);
+    }
+    
   }
   
   void move(){  

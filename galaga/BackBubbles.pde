@@ -3,32 +3,31 @@ public class BackBubbles {
   float xCor;
   float xMax;
   float yMax;
-  float yCor;
+  float y;
   color baseC;
-  
   BackBubbles(int w, int h) {
     xMax = w;
     xCor = (float) (random(w));
     yMax = (float) (h);
-    yCor = (float) (random(h));
-    baseC = color(random(255), random(255), random(255));  
+    y = (float) (random(h));
+    baseC = color(random(255), random(255), random(255));
   }
   
   void move() {
     double toAdd = 10;
     double mult = Math.random();
     if (mult < 0.3) {
-      toAdd = mult * (yMax / 10);
+      toAdd = mult * (yMax / 200);
     }
     else if (mult < 0.6) {
-      toAdd = mult * (yMax / 15);
+      toAdd = mult * (yMax / 100);
     }
     else {
       toAdd *= mult;
     }
-    yCor += (float)toAdd;
-    if (yCor > yMax) {
-      yCor = 0;
+    y += (float)toAdd;
+    if (y > yMax) {
+      y = 0;
       baseC = color(random(255), random(255), random(255));
     }
   }
@@ -36,7 +35,7 @@ public class BackBubbles {
   void display() {
     
     fill(baseC);
-    ellipse(xCor, yCor, 3, 3);
+    ellipse(xCor, y, 3, 3);
   }
   
 }
