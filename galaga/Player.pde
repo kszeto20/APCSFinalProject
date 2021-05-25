@@ -27,15 +27,15 @@ public class Player{
     ellipse(xCor + 5, yCor + 20, 2, 2);
     ellipse(xCor - 5, yCor + 20, 2, 2);
     rect(xCor - 5, yCor + 30, 10, 2);
-    //for (Bullet b : bullets) {
-    //  b.move();
-    //  b.display();
-    //}
+    for (Bullet b : bullets) {
+      b.move();
+      b.display();
+    }
   }
   
-  //void shoot() {
-  //  Bullet toAdd = new Bullet(xMax, yMax, xCor, yCor, 0);
-  //  bullets.add(toAdd);
-  //}
+  void shoot() {
+    Bullet toAdd = new Bullet(xMax, yMax, xCor, yCor, 0);
+    bullets.add(toAdd);
+  }
   
 }

@@ -1,7 +1,7 @@
 ArrayList<BackBubbles> backs;
 Player control;
 // start button = xcor, ycor, width, height, 0 = not pressed + 1 = pressed
-int[] sButton = {0, 0, 200, 50, 0};
+int[] sButton = {300, 370, 200, 50, 0};
 ArrayList<Bullet> bullets;
 
 void setup() {
@@ -22,12 +22,12 @@ void draw() {
   if (sButton[4] == 0) {
     fill(255);
     textSize(50);
-    text("\nGalaga so far", 250, height / 3);
+    text("\nGalaga so far", 250, 0);
     fill(#FFD6D9);
-    rect(sButton[0], sButton[1], sButton[2], sButton[3]);
+    rect(300, 370, 200, 50);
     fill(#FF0318);
     textSize(18);
-    text("PRESS HERE TO START", 0, 30);
+    text("PRESS HERE TO START", 300, height / 2);
   }
   else if (sButton[4] == 1) {
     control.display();
@@ -64,6 +64,7 @@ void moveP(Player control) {
 }
 
 void keyPressed() {
+  println(keyCode); 
   if (keyCode == 37) {
     control.left = true;
   }
@@ -78,7 +79,7 @@ void keyPressed() {
       control.right = true;
     }
     else {
-      if (keyCode == ' ') {
+      if (keyCode == 32) {
         control.shoot();
       }
     }
