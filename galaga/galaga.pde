@@ -42,6 +42,7 @@ void draw() {
       e.move();
       if(prob < 1){
         e.shoot();
+        e.shoot();
       }
       e.display();
     }
