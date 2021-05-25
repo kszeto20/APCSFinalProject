@@ -1,5 +1,6 @@
 ArrayList<BackBubbles> backs;
 Player control;
+StartBox sBox;
 void setup() {
   frameRate(60);
   size (800,800);
@@ -9,6 +10,7 @@ void setup() {
     backs.add(new BackBubbles(width, height));
   }
   control = new Player(width, height);
+  sBox = new StartBox(width, height);
 }
 
 void draw() {
@@ -16,6 +18,7 @@ void draw() {
   fill(255);
   textSize(50);
   text("\nGalaga so far", width / 3, 0);
+  sBox.display();
   for (BackBubbles b : backs) {
     b.move();
     b.display();
