@@ -34,13 +34,11 @@ public class Enemy{
     if (xCor < width * 0.3) {
       xCor = width * 0.3 + 1;
       dx *= -1;
-      yCor += dy;
     }
     //right bound
     if (xCor > width * 0.7) {
       xCor = width * 0.7 - 1;
       dx *= -1; 
-      yCor += dy;
     }
     // loops back to the top
     if (yCor > yMax) {
