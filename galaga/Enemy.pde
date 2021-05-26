@@ -34,16 +34,24 @@ public class Enemy{
     if (xCor < width * 0.2) {
       xCor = width * 0.2 + 1;
       dx *= -1;
+<<<<<<< HEAD
+=======
+      //yCor += dy;
+>>>>>>> bf56aec27a133cf882a964f68d8c816716197c6e
     }
     //right bound
     if (xCor > width * 0.8) {
       xCor = width * 0.8 - 1;
       dx *= -1; 
+<<<<<<< HEAD
+=======
+      //yCor += dy;
+>>>>>>> bf56aec27a133cf882a964f68d8c816716197c6e
     }
     // loops back to the top
-    if (yCor > yMax) {
-      yCor = yMax * 0.1;
-    }
+    //if (yCor > yMax) {
+    //  yCor = yMax * 0.1;
+    //}
   }
   
   void shoot(){

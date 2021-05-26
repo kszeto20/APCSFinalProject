@@ -25,5 +25,9 @@ public class Bullet{
       yCor += 5;
     }
   }
+  
+  //void collide() {
+    
+  //}
   // neeed a collide method with arraylist of all enemy ships
 }
