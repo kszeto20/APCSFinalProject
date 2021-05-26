@@ -34,19 +34,14 @@ public class Enemy{
     if (xCor < width * 0.2) {
       xCor = width * 0.2 + 1;
       dx *= -1;
-<<<<<<< HEAD
-=======
+
       //yCor += dy;
->>>>>>> bf56aec27a133cf882a964f68d8c816716197c6e
     }
     //right bound
     if (xCor > width * 0.8) {
       xCor = width * 0.8 - 1;
       dx *= -1; 
-<<<<<<< HEAD
-=======
       //yCor += dy;
->>>>>>> bf56aec27a133cf882a964f68d8c816716197c6e
     }
     // loops back to the top
     //if (yCor > yMax) {
@@ -61,4 +56,11 @@ public class Enemy{
       otherBullets.add(toAdd);
     }
   }
-}
+  
+  /*void collide(){
+    for(Bullet b: bullets){
+      if(b. < 10){
+        
+      }
+    }*/
+  }
