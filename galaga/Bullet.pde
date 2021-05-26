@@ -26,8 +26,8 @@ public class Bullet{
     }
   }
   
-  void collide() {
+  //void collide() {
     
-  }
+  //}
   // neeed a collide method with arraylist of all enemy ships
 }
