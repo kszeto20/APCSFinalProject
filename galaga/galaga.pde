@@ -1,10 +1,10 @@
 ArrayList<BackBubbles> backs;
-Player control;
 // start button = xcor, ycor, width, height, 0 = not pressed + 1 = pressed
 int[] sButton = {300, 370, 200, 50, 0};
 ArrayList<Bullet> bullets;
 ArrayList<Bullet> otherBullets;
 ArrayList<Enemy> enemies;
+ArrayList<Player> control;
 
 void setup() {
   frameRate(60);
@@ -14,12 +14,13 @@ void setup() {
   for (int i = 0; i < width / 5; i++) {
     backs.add(new BackBubbles(width, height));
   }
-  control = new Player(width, height);
+  control = new ArrayList<Player>();
+  control.add(new Player(width, height));
   bullets = new ArrayList<Bullet>();
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
-  for (int i = 0; i < 1; i++) {
-    enemies.add(new Enemy(width, height));
+  for (int i = 0; i < 180; i += 60) {
+    enemies.add(new Enemy(width + i, height));
   }
 }
 
@@ -36,7 +37,7 @@ void draw() {
     text("PRESS HERE TO START", 300, height / 2);
   }
   else if (sButton[4] == 1) {
-    control.display();
+    control.get(0).display();
     double prob = random(10);
     for (Enemy e : enemies) {
       e.move();
@@ -47,7 +48,7 @@ void draw() {
       e.display();
     }
     if(keyPressed){
-      moveP(control);
+      moveP(control.get(0));
     }
   }
   for (BackBubbles b : backs) {
@@ -79,21 +80,21 @@ void moveP(Player control) {
 
 void keyPressed() {
   if (keyCode == 37) {
-    control.left = true;
+    control.get(0).left = true;
   }
   else if (keyCode == 38) {
-    control.up = true;
+    control.get(0).up = true;
   }
   else if (keyCode == 40) {
-    control.down = true;
+    control.get(0).down = true;
   }
   else {
     if (keyCode == 39) {
-      control.right = true;
+      control.get(0).right = true;
     }
     else {
       if (keyCode == 32) {
-        control.shoot();
+        control.get(0).shoot();
       }
     }
   }
@@ -101,17 +102,17 @@ void keyPressed() {
  
 void keyReleased() {
   if (keyCode == 37) {
-    control.left = false;
+    control.get(0).left = false;
   }
   else if (keyCode == 38) {
-    control.up = false;
+    control.get(0).up = false;
   }
   else if (keyCode == 40) {
-    control.down = false;
+    control.get(0).down = false;
   }
   else {
     if (keyCode == 39) {
-      control.right = false;
+      control.get(0).right = false;
     }
   }
 }

@@ -22,7 +22,7 @@ public class Bullet{
       yCor -= 30;
     }
     else if (typeP == 1) {
-      yCor += 10;
+      yCor += 5;
     }
   }
   // neeed a collide method with arraylist of all enemy ships
