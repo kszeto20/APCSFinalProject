@@ -40,12 +40,14 @@ void draw() {
     control.get(0).display();
     double prob = random(10);
     for (Enemy e : enemies) {
-      e.move();
-      if(prob < 1){
-        e.shoot();
-        e.shoot();
+      e.collide();
+      if(e.kill == false){
+        e.display();
+        if(prob < 1){
+          e.shoot();
+          e.shoot();
+        }
       }
-      e.display();
     }
     if(keyPressed){
       moveP(control.get(0));
