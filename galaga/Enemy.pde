@@ -5,7 +5,7 @@ public class Enemy{
   float dy;
   float yMax;
   boolean kill;
-
+  
   Enemy(float w, float h){
     yMax = h;
     xCor = w / 2;
@@ -59,11 +59,13 @@ public class Enemy{
   }
   
   void collide(){
+    int factor = 0;
     for(Bullet b: bullets){
       for(float i = xCor - 20;i <= xCor;i++){
-        if(b.yCor + 20 < xCor * 2 + (yCor - 40) && b.yCor + 20 > yCor - 40 && b.xCor > xCor - 20 && b.xCor < xCor){
+        factor += 2;
+        if(b.yCor < xCor - 20 + factor && b.yCor - 20 > yCor - 40 && b.xCor > xCor - 20 && b.xCor < xCor){
           kill = true;
-        }
+        }                               
       }
     }
   }
