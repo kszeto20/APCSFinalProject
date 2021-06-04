@@ -52,19 +52,19 @@ public class Player{
           if (i != b.xCor) {
           }
           else {
-            float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
-            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+            float upper = (yCor + 40) - ((i - (xCor - 20)) * 2) ;
+            if (b.yCor + 20 >= upper && b.yCor <= yCor + 40) {
               kill = true;
             }
           }
         }
         if (kill == false) {
-          for(float i = xCor + 1;i <= xCor + 20;i++){
+          for(float i = xCor + 1; i <= xCor + 20;i++){
             if (i != b.xCor) {
             }
             else {
-              float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
-              if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+              float upper = (yCor + 40) - ((xCor + 20 - i) * 2);
+              if (b.yCor + 20 >= upper && b.yCor <= yCor + 40) {
                 kill = true;
               }
             }
