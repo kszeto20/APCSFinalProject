@@ -19,3 +19,5 @@ added a push to start feature, movements limited to left right motion to model t
 May 25th - movements now expanded again to include left, right, up, down; movement is smooth for player now. bullet class and enemy class (implemented) - (update: move method works best in driver class) + "impact" from bullets need to be implemented
 
 May 28th- began working on algorithm for colliding bullets and players and enemies
+
+June 3rd - finished collide method, enemy bullets now kill player

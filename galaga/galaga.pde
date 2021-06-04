@@ -55,6 +55,9 @@ void draw() {
     if(keyPressed){
       moveP(control.get(0));
     }
+    for (Player c : control) {
+      c.collide();
+    }
   }
   for (BackBubbles b : backs) {
     b.move();

@@ -7,8 +7,7 @@ public class Player{
   boolean right;
   boolean up;
   boolean down;
-  boolean kill; 
-  
+  boolean kill;   
   
   Player(float w, float h){
     xMax = w;
@@ -19,18 +18,24 @@ public class Player{
     right = false;
     up = false;
     down = false;
+    kill = false;
   }
   
   void display(){
-    fill(255);
-    triangle(xCor - 20, yCor + 40, xCor, yCor, xCor + 20, yCor + 40);
-    fill(0);
-    ellipse(xCor + 5, yCor + 20, 2, 2);
-    ellipse(xCor - 5, yCor + 20, 2, 2);
-    rect(xCor - 5, yCor + 30, 10, 2);
-    for (Bullet b : bullets) {
-      b.move();
-      b.display();
+    if (kill) {
+      
+    } else {
+      fill(255);
+      triangle(xCor - 20, yCor + 40, xCor, yCor, xCor + 20, yCor + 40);
+      fill(0);
+      ellipse(xCor + 5, yCor + 20, 2, 2);
+      ellipse(xCor - 5, yCor + 20, 2, 2);
+      rect(xCor - 5, yCor + 30, 10, 2);
+      for (Bullet b : bullets) {
+        b.move();
+        b.display();
+      }
+      collide();
     }
   }
   
@@ -43,6 +48,7 @@ public class Player{
     for(Bullet b: otherBullets){
       // left check
       if (b.xCor <= xCor + 20 && b.xCor >= xCor - 20) {
+      if (b.xCor <= xCor && b.xCor >= xCor - 20) {
         for(float i = xCor - 20;i <= xCor;i++){
           if (i != b.xCor) {
           }
@@ -66,5 +72,6 @@ public class Player{
       }
     }
   }
-  
+  }
 }
+  
