@@ -1,6 +1,7 @@
 ArrayList<BackBubbles> backs;
 // start button = xcor, ycor, width, height, 0 = not pressed + 1 = pressed
 int[] sButton = {300, 370, 200, 50, 0};
+int[] rButton = {300, 425, 225, 50, 0};
 int score;
 ArrayList<Bullet> bullets;
 ArrayList<Bullet> otherBullets;
@@ -25,12 +26,23 @@ void setup() {
   }
 }
 
+
+
 void draw() {
   if (control.get(0).kill) {
+    sButton[4] = 0;
     background(0);
+    for (BackBubbles b : backs) {
+      b.move();
+      b.display();
+    }
     fill(#FF0318);
     textSize(50);
     text("Game Over :(", 250, height / 2);
+    rect(300, 425, 225, 50);
+    fill(255);
+    textSize(18);
+    text("PRESS HERE TO RESTART", 300, 450);
   } 
   else {
     background(0);
@@ -75,6 +87,9 @@ void draw() {
 
 void mousePressed() {
   if ((mouseY < (sButton[1] + sButton[3])) && (mouseY > sButton[1])) {
+     sButton[4] = 1;
+  }
+  if ((mouseY < (rButton[1] + rButton[3])) && (mouseY > rButton[1])) {
      sButton[4] = 1;
   }
 }

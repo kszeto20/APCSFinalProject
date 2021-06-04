@@ -56,15 +56,30 @@ public class Player{
             if (b.yCor + 20 >= upper && b.yCor <= yCor + 40) {
               kill = true;
             }
+            if (b.yCor < upper && b.yCor > yCor - 40) {
+              kill = true;
+            }
           }
         }
         if (kill == false) {
+<<<<<<< HEAD
           for(float i = xCor + 1; i <= xCor + 20;i++){
             if (i != b.xCor) {
             }
             else {
               float upper = (yCor + 40) - ((xCor + 20 - i) * 2);
               if (b.yCor + 20 >= upper && b.yCor <= yCor + 40) {
+=======
+          for(float i = xCor + 20;i > xCor;i--){
+            if (i != b.xCor) {
+            }
+            else {
+              float upper = (abs(i - (xCor - 20)) * 2) + yCor - 40;
+              if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+>>>>>>> 1fe8392ef204701fa532cab4ce8d5c97d4080811
+                kill = true;
+              }
+              if (b.yCor < upper && b.yCor > yCor - 40) {
                 kill = true;
               }
             }
