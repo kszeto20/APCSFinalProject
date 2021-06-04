@@ -68,6 +68,7 @@ public class Enemy{
           else{ 
             if(b.yCor < factor + yCor - 40 && b.yCor > yCor - 40){
               kill = true;
+              score += 100;
             }  
           }
         }
@@ -78,6 +79,7 @@ public class Enemy{
           else{ 
             if(b.yCor < factor + yCor - 40  && b.yCor > yCor - 40){
               kill = true;
+              score += 100;
             }  
           }
         }
