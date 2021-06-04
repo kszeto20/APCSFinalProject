@@ -20,4 +20,4 @@ May 25th - movements now expanded again to include left, right, up, down; moveme
 
 May 28th- began working on algorithm for colliding bullets and players and enemies
 
-June 3rd - finished collide method, enemy bullets now kill player
+June 3rd - finished collide method, enemy bullets now kill player (fixed again), game over screen added
