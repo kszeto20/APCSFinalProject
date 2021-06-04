@@ -37,11 +37,11 @@ void draw() {
     fill(#FF0318);
     textSize(50);
     text("Game Over :(", 250, height / 2);
-    rect(300, 425, 225, 50);
+    /*rect(300, 425, 225, 50);
     fill(255);
     textSize(18);
     text("PRESS HERE TO RESTART", 300, 450);
-  } 
+  */} 
   else {
     background(0);
     if (sButton[4] == 0) {
