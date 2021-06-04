@@ -62,6 +62,7 @@ void draw() {
       for (Enemy e : enemies) {
         e.collide();
         if(e.kill == false){
+          e.move();
           e.display();
           if(prob < 1){
             e.shoot();
