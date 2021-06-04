@@ -7,6 +7,7 @@ public class Player{
   boolean right;
   boolean up;
   boolean down;
+  boolean killed;
   
   
   Player(float w, float h){
@@ -18,24 +19,58 @@ public class Player{
     right = false;
     up = false;
     down = false;
+    killed = false;
   }
   
   void display(){
-    fill(255);
-    triangle(xCor - 20, yCor + 40, xCor, yCor, xCor + 20, yCor + 40);
-    fill(0);
-    ellipse(xCor + 5, yCor + 20, 2, 2);
-    ellipse(xCor - 5, yCor + 20, 2, 2);
-    rect(xCor - 5, yCor + 30, 10, 2);
-    for (Bullet b : bullets) {
-      b.move();
-      b.display();
+    if (killed) {
+      
+    } else {
+      fill(255);
+      triangle(xCor - 20, yCor + 40, xCor, yCor, xCor + 20, yCor + 40);
+      fill(0);
+      ellipse(xCor + 5, yCor + 20, 2, 2);
+      ellipse(xCor - 5, yCor + 20, 2, 2);
+      rect(xCor - 5, yCor + 30, 10, 2);
+      for (Bullet b : bullets) {
+        b.move();
+        b.display();
+      }
+      collide();
     }
   }
   
   void shoot() {
     Bullet toAdd = new Bullet(xCor, yCor, 0);
     bullets.add(toAdd);
+  }
+  
+  void collide(){
+    for(Bullet b: otherBullets){
+      // left check
+      if (b.xCor <= xCor && b.xCor >= xCor - 20) {
+        for(float i = xCor - 20;i <= xCor;i++){
+          if (i != b.xCor) {
+          }
+          else {
+            float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
+            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+              killed = true;
+            }
+          }
+        }
+        for(float i = xCor + 1;i <= xCor + 20;i++){
+          if (i != b.xCor) {
+          }
+          else {
+            float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
+            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+              killed = true;
+            }
+          }
+        }
+      }
+    }
   }
   
 }
