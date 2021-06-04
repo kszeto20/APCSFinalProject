@@ -48,7 +48,6 @@ public class Player{
     for(Bullet b: otherBullets){
       // left check
       if (b.xCor <= xCor + 20 && b.xCor >= xCor - 20) {
-      if (b.xCor <= xCor && b.xCor >= xCor - 20) {
         for(float i = xCor - 20;i <= xCor;i++){
           if (i != b.xCor) {
           }
@@ -71,7 +70,6 @@ public class Player{
         }
       }
     }
-  }
   }
 }
   
