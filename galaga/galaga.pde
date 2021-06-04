@@ -1,6 +1,7 @@
 ArrayList<BackBubbles> backs;
 // start button = xcor, ycor, width, height, 0 = not pressed + 1 = pressed
 int[] sButton = {300, 370, 200, 50, 0};
+int score;
 ArrayList<Bullet> bullets;
 ArrayList<Bullet> otherBullets;
 ArrayList<Enemy> enemies;
@@ -9,7 +10,7 @@ ArrayList<Player> control;
 void setup() {
   frameRate(60);
   size (800,800);
-  
+  score = 0;
   backs = new ArrayList<BackBubbles>();
   for (int i = 0; i < width / 5; i++) {
     backs.add(new BackBubbles(width, height));
@@ -37,6 +38,8 @@ void draw() {
     text("PRESS HERE TO START", 300, height / 2);
   }
   else if (sButton[4] == 1) {
+    fill(255);
+    text("Score: " + score, 650, 50);
     control.get(0).display();
     double prob = random(10);
     for (Enemy e : enemies) {

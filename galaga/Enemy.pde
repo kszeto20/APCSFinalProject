@@ -57,16 +57,4 @@ public class Enemy{
       otherBullets.add(toAdd);
     }
   }
-  
-  void collide(){
-    int factor = 0;
-    for(Bullet b: bullets){
-      for(float i = xCor - 20;i <= xCor;i++){
-        factor += 2;
-        if(b.yCor < xCor - 20 + factor && b.yCor - 20 > yCor - 40 && b.xCor > xCor - 20 && b.xCor < xCor){
-          kill = true;
-        }                               
-      }
-    }
-  }
 }

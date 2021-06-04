@@ -7,6 +7,7 @@ public class Player{
   boolean right;
   boolean up;
   boolean down;
+  boolean kill; 
   
   
   Player(float w, float h){
@@ -36,6 +37,34 @@ public class Player{
   void shoot() {
     Bullet toAdd = new Bullet(xCor, yCor, 0);
     bullets.add(toAdd);
+  }
+  
+  void collide(){
+    for(Bullet b: otherBullets){
+      // left check
+      if (b.xCor <= xCor + 20 && b.xCor >= xCor - 20) {
+        for(float i = xCor - 20;i <= xCor;i++){
+          if (i != b.xCor) {
+          }
+          else {
+            float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
+            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+              kill = true;
+            }
+          }
+        }
+        for(float i = xCor + 1;i <= xCor + 20;i++){
+          if (i != b.xCor) {
+          }
+          else {
+            float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
+            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+              kill = true;
+            }
+          }
+        }
+      }
+    }
   }
   
 }
