@@ -26,42 +26,50 @@ void setup() {
 }
 
 void draw() {
-  background(0);
-  if (sButton[4] == 0) {
-    fill(255);
-    textSize(50);
-    text("\nGalaga so far", 250, 0);
-    fill(#FFD6D9);
-    rect(300, 370, 200, 50);
+  if (control.get(0).kill) {
+    background(0);
     fill(#FF0318);
-    textSize(18);
-    text("PRESS HERE TO START", 300, height / 2);
-  }
-  else if (sButton[4] == 1) {
-    fill(255);
-    text("Score: " + score, 650, 50);
-    control.get(0).display();
-    double prob = random(10);
-    for (Enemy e : enemies) {
-      e.collide();
-      if(e.kill == false){
-        e.display();
-        if(prob < 0.5){
-          e.shoot();
-          e.shoot();
+    textSize(50);
+    text("Game Over :(", 250, height / 2);
+  } 
+  else {
+    background(0);
+    if (sButton[4] == 0) {
+      fill(255);
+      textSize(50);
+      text("\nGalaga so far", 250, 0);
+      fill(#FFD6D9);
+      rect(300, 370, 200, 50);
+      fill(#FF0318);
+      textSize(18);
+      text("PRESS HERE TO START", 300, height / 2);
+    }
+    else if (sButton[4] == 1) {
+      fill(255);
+      text("Score: " + score, 650, 50);
+      control.get(0).display();
+      double prob = random(10);
+      for (Enemy e : enemies) {
+        e.collide();
+        if(e.kill == false){
+          e.display();
+          if(prob < 1){
+            e.shoot();
+            e.shoot();
+          }
         }
       }
+      if(keyPressed){
+        moveP(control.get(0));
+      }
+      for (Player c : control) {
+        c.collide();
+      }
     }
-    if(keyPressed){
-      moveP(control.get(0));
+    for (BackBubbles b : backs) {
+      b.move();
+      b.display();
     }
-    for (Player c : control) {
-      c.collide();
-    }
-  }
-  for (BackBubbles b : backs) {
-    b.move();
-    b.display();
   }
 }
 

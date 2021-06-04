@@ -58,13 +58,15 @@ public class Player{
             }
           }
         }
-        for(float i = xCor + 1;i <= xCor + 20;i++){
-          if (i != b.xCor) {
-          }
-          else {
-            float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
-            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
-              kill = true;
+        if (kill == false) {
+          for(float i = xCor + 1;i <= xCor + 20;i++){
+            if (i != b.xCor) {
+            }
+            else {
+              float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
+              if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+                kill = true;
+              }
             }
           }
         }
