@@ -62,21 +62,21 @@ public class Enemy{
     for(Bullet b: bullets){
       if (b.xCor <= xCor + 20 && b.xCor >= xCor - 20) {
         for(float i = xCor - 20;i <= xCor;i++){
-          float factor = (i - xCor - 20) * 2;
+          float factor = (i - (xCor - 20)) * 2;
           if(i != b.xCor){
            }
           else{ 
-            if(b.yCor < factor + yCor + 40 && b.yCor > yCor + 40){
+            if(b.yCor + 20 < factor + yCor + 40 && b.yCor > yCor){
               kill = true;
             }  
           }
         }
         for(float i = xCor + 1;i <= xCor + 20;i++){
-          float factor = (i - xCor - 20) * 2;
+          float factor = (i - (xCor - 20)) * 2;
           if(i != b.xCor){
            }
           else{ 
-            if(b.yCor < factor + yCor + 40  && b.yCor > yCor + 40){
+            if(b.yCor + 20 < factor + yCor + 40  && b.yCor > yCor){
               kill = true;
             }  
           }

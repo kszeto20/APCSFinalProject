@@ -46,7 +46,7 @@ void draw() {
       e.collide();
       if(e.kill == false){
         e.display();
-        if(prob < 1){
+        if(prob < 0.5){
           e.shoot();
           e.shoot();
         }
