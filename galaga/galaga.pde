@@ -59,16 +59,21 @@ void draw() {
       text("Score: " + score, 650, 50);
       control.get(0).display();
       double prob = random(10);
-      for (Enemy e : enemies) {
-        e.collide();
-        if(e.kill == false){
-          e.move();
-          e.display();
-          if(prob < 1){
-            e.shoot();
-            e.shoot();
-          }
+      println(enemies.size());
+      for (int i = 0;i < enemies.size();i++) {
+        if(enemies.get(i).kill == true){
+          enemies.remove(enemies.get(i));
+          i--;
         }
+        else{
+          enemies.get(i).move();
+          enemies.get(i).collide();
+          enemies.get(i).display();
+          if(prob < 1){
+            enemies.get(i).shoot();
+            enemies.get(i).shoot();
+          }
+        }  
       }
       if(keyPressed){
         moveP(control.get(0));
