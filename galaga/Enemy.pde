@@ -51,6 +51,13 @@ public class Enemy{
   }
   
   void shoot(){
+    ArrayList<Bullet> toRep = new ArrayList<Bullet>();
+    if (otherBullets.size() > 40) {
+      for (int i = 20; i < 40; i++) {
+        toRep.add(otherBullets.get(i));
+      }
+      otherBullets = toRep;
+    }
     double r = random(10);
     if (r < 2) {
       Bullet toAdd = new Bullet(xCor, yCor - 30, 1);

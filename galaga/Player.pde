@@ -40,6 +40,13 @@ public class Player{
   }
   
   void shoot() {
+    ArrayList<Bullet> toRep = new ArrayList<Bullet>();
+    if (bullets.size() > 40) {
+      for (int i = 20; i < 40; i++) {
+        toRep.add(bullets.get(i));
+      }
+      bullets = toRep;
+    }
     Bullet toAdd = new Bullet(xCor, yCor, 0);
     bullets.add(toAdd);
   }
