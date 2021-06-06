@@ -5,13 +5,15 @@ public class Enemy{
   float dy;
   float yMax;
   boolean kill;
+  boolean spawned;
   
   Enemy(float w, float h){
     yMax = h;
-    xCor = w / 2;
-    yCor = h * 0.1;
+    xCor = 0;
+    yCor = h - 1;
     dx = 5;
     dy = 50;
+    spawned = false;
   }
   
   void display(){

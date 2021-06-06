@@ -21,9 +21,7 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
-  for (int i = 0; i < 180; i += 60) {
-    enemies.add(new Enemy(width + i, height));
-  }
+  spawn();
 }
 
 void draw() {
@@ -44,6 +42,7 @@ void draw() {
   */} 
   else {
     background(0);
+    spawnMove();
     if (sButton[4] == 0) {
       fill(255);
       textSize(50);
@@ -88,6 +87,39 @@ void draw() {
     }
   }
 }
+
+void spawn() {
+  for (int i = 0; i < 10; i++) {
+    enemies.add(new Enemy(width, height));
+  }
+}
+void spawnMove() {
+  // move them up
+  for (Enemy e : enemies) {
+    while ((e.xCor > width / 2) && (e.yCor > (height * 0.1))) {
+      e.xCor -= 10;
+      e.yCor -= 10;
+      e.display();
+    }
+    e.spawned = true;
+  }
+}
+  //}
+  //// separate them
+  //int len = enemies.size() - 1;
+  //for (int i = 0; i < enemies.size(); i++) {
+  //  if (len > enemies.size() / 2) {
+  //    enemies.get(i).xCor -= 20 * len + random(50);
+  //  }
+  //  if (len < enemies.size() / 2) {
+  //    enemies.get(i).xCor += 20 * len + random(50);
+  //  }
+  //  if (len == enemies.size() / 2) {
+      
+  //  }
+  //  len--;
+  //}
+
 
 void mousePressed() {
   if ((mouseY < (sButton[1] + sButton[3])) && (mouseY > sButton[1])) {
@@ -156,5 +188,13 @@ void keyReleased() {
 
 /*
 DEBUG NOTES:
-next session - actual attacks (05/25)
+after killing all enemies, score counter continues -- need a fix
+enemy bullets slow down as more enemies are killed -- need a fix
+spawn method process - spawn first (no display) (done)
+spawnMove method process - move + display 
+^(still buggy; need to avoid shooting until spawned is finished + fix slope of movement for aesthetics +
+                need to find a way to separate enemies because they are all stack on top of one another rn)
+                
+to operate: move player all the way to the edge of the screen until spawning is finished
+
 */
