@@ -59,7 +59,6 @@ void draw() {
       text("Score: " + score, 650, 50);
       control.get(0).display();
       double prob = random(10);
-      println(enemies.size());
       for (int i = 0;i < enemies.size();i++) {
         if(enemies.get(i).kill == true){
           enemies.remove(enemies.get(i));
