@@ -9,6 +9,9 @@ Project description: Galaga-inspired (just galaga) game.  We’re gonna have mos
 
 https://docs.google.com/document/d/1Q7UMiH_Ij0yi7uksWHtDGH4c1utSSgY0uF96kxaX7Jc/edit?ts=60aacf0a
 
+How to Play Our Game:
+Pull all code and run with the play button on Processing.
+
 Devlog
 May 23rd- began working on the project.  Made the prototype document and started on the actual code.  Made the background stars and coded basic movement for the player ship.  Movement is still janky as the directions of the movement messes up when doing sequential moves
 
