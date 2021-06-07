@@ -22,7 +22,7 @@ void setup() {
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
   //spawn();
-  for (int i = 0; i < 180; i += 60) {
+  for (int i = 0; i < 180; i += 10) {
     enemies.add(new Enemy(width + i, height));
   }
 }
@@ -61,6 +61,10 @@ void draw() {
       text("Score: " + score, 650, 50);
       control.get(0).display();
       double prob = random(10);
+      for (Bullet b : otherBullets) {
+               b.move();
+               b.display();
+             }
       for (int i = 0;i < enemies.size();i++) {
         if(enemies.get(i).kill == true){
           enemies.remove(enemies.get(i));
@@ -70,10 +74,6 @@ void draw() {
           enemies.get(i).move();
           enemies.get(i).collide();
           enemies.get(i).display();
-          for (Bullet b : otherBullets) {
-               b.move();
-               b.display();
-             }
           if(prob < 1){
             enemies.get(i).shoot();
             enemies.get(i).shoot();
