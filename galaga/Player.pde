@@ -60,10 +60,10 @@ public class Player{
           }
           else {
             float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
-            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+            if (b.yCor + 20 < upper && b.yCor + 20 > yCor + 20) {
               kill = true;
             }
-            if (b.yCor < upper && b.yCor > yCor - 40) {
+            if (b.yCor < upper && b.yCor + 20 > yCor + 20) {
               kill = true;
             }
           }
@@ -74,10 +74,10 @@ public class Player{
             }
             else {
               float upper = (abs(i - (xCor - 20)) * 2) + yCor - 40;
-              if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
+              if (b.yCor + 20 < upper && b.yCor + 20 > yCor + 20) {
                 kill = true;
               }
-              if (b.yCor < upper && b.yCor > yCor - 40) {
+              if (b.yCor < upper && b.yCor + 20 > yCor + 20) {
                 kill = true;
               }
             }

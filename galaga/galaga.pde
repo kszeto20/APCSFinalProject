@@ -22,7 +22,7 @@ void setup() {
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
   //spawn();
-  for (int i = 0; i < 180; i += 10) {
+  for (int i = 0; i < 180; i += 60) {
     enemies.add(new Enemy(width + i, height));
   }
 }
@@ -62,9 +62,9 @@ void draw() {
       control.get(0).display();
       double prob = random(10);
       for (Bullet b : otherBullets) {
-               b.move();
-               b.display();
-             }
+        b.move();
+        b.display();
+      }
       for (int i = 0;i < enemies.size();i++) {
         if(enemies.get(i).kill == true){
           enemies.remove(enemies.get(i));
@@ -194,7 +194,7 @@ void keyReleased() {
 
 /*
 DEBUG NOTES:
-after killing all enemies, score counter continues -- need a fix
+after killing all enemies, score counter continues (done)
 enemy bullets slow down as more enemies are killed -- need a fix
 spawn method process - spawn first (no display) (done)
 spawnMove method process - move + display 
