@@ -9,8 +9,8 @@ public class Enemy{
   
   Enemy(float w, float h){
     yMax = h;
-    xCor = 0;
-    yCor = h - 1;
+    xCor = w / 2;
+    yCor = h * 0.1;
     dx = 5;
     dy = 50;
     spawned = false;
@@ -24,10 +24,6 @@ public class Enemy{
     ellipse(xCor + 5, yCor - 20, 2, 2);
     ellipse(xCor - 5, yCor - 20, 2, 2);
     rect(xCor - 5, yCor - 30, 10, 2);       
-    for (Bullet b : otherBullets) {
-      b.move();
-      b.display();
-    }
   }
  
   void move(){

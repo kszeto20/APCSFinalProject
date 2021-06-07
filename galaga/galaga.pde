@@ -21,7 +21,10 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
-  spawn();
+  //spawn();
+  for (int i = 0; i < 180; i += 60) {
+    enemies.add(new Enemy(width + i, height));
+  }
 }
 
 void draw() {
@@ -42,7 +45,7 @@ void draw() {
   */} 
   else {
     background(0);
-    spawnMove();
+    //spawnMove();
     if (sButton[4] == 0) {
       fill(255);
       textSize(50);
@@ -68,6 +71,10 @@ void draw() {
           enemies.get(i).collide();
           enemies.get(i).display();
           if(prob < 1){
+            for (Bullet b : otherBullets) {
+               b.move();
+               b.display();
+             }
             enemies.get(i).shoot();
             enemies.get(i).shoot();
           }

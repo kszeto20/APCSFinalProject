@@ -22,7 +22,7 @@ public class Bullet{
       yCor -= 20;
     }
     else if (typeP == 1) {
-      yCor += 3;
+      yCor += 5;
     }
   }
   
