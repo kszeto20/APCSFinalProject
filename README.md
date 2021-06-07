@@ -23,3 +23,5 @@ May 28th- began working on algorithm for colliding bullets and players and enemi
 June 3rd - finished collide method, enemy bullets now kill player (fixed again), game over screen added
 
 June 5th - changed how we removed bullets off screen and enemies that were shot, actually removes enemies now + prelim spawn method
+
+June 7th - fixed bullet speed issue and updated hitboxes for player, bullet speed is no longer proportional to the number of enemies and the top of the bullet now has proper collision with the player
