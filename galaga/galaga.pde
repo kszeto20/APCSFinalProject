@@ -70,11 +70,11 @@ void draw() {
           enemies.get(i).move();
           enemies.get(i).collide();
           enemies.get(i).display();
-          if(prob < 1){
-            for (Bullet b : otherBullets) {
+          for (Bullet b : otherBullets) {
                b.move();
                b.display();
              }
+          if(prob < 1){
             enemies.get(i).shoot();
             enemies.get(i).shoot();
           }
