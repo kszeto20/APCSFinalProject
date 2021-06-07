@@ -19,10 +19,10 @@ public class Bullet{
   
   void move(){  
     if (typeP == 0) {
-      yCor -= 20;
+      yCor -= 25;
     }
     else if (typeP == 1) {
-      yCor += 5;
+      yCor += 10;
     }
   }
   
