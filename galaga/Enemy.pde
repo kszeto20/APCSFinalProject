@@ -50,8 +50,8 @@ public class Enemy{
   
   void shoot(){
     ArrayList<Bullet> toRep = new ArrayList<Bullet>();
-    if (otherBullets.size() > 40) {
-      for (int i = 20; i < 40; i++) {
+    if (otherBullets.size() > 100) {
+      for (int i = 20; i < 100; i++) {
         toRep.add(otherBullets.get(i));
       }
       otherBullets = toRep;
