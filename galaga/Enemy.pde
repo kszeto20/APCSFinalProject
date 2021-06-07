@@ -56,11 +56,10 @@ public class Enemy{
       }
       otherBullets = toRep;
     }
-    double r = random(10);
-    if (r < 2) {
+    
       Bullet toAdd = new Bullet(xCor, yCor - 30, 1);
       otherBullets.add(toAdd);
-    }
+    
   }
   
   void collide(){
