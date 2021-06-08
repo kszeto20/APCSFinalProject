@@ -16,6 +16,19 @@ public class Enemy{
     spawned = false;
   }
   
+  Enemy(float w, float h, int type){
+    yMax = h;
+    xCor = w / 2;
+    yCor = h * 0.1;
+    dx = 5;
+    dy = 50;
+    spawned = false;
+    if (type == 0) {
+      xCor = 0;
+      yCor = h / 2;
+    }
+  }
+  
   void display(){
     fill(255, 0, 0);
     triangle(xCor - 20, yCor - 40, xCor, yCor, xCor + 20, yCor - 40);

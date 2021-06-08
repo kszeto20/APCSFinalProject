@@ -24,9 +24,9 @@ void setup() {
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
   //spawn();
-  for (int i = 0; i < 180; i += 60) {
-    enemies.add(new Enemy(width + i, height));
-  }
+  //for (int i = 0; i < 180; i += 60) {
+  //  enemies.add(new Enemy(width + i, height));
+  //}
 }
 
 void draw() {
@@ -59,6 +59,10 @@ void draw() {
       text("PRESS HERE TO START", 300, height / 2);
     }
     else if (sButton[4] == 1) {
+      if (enemies.size() == 0) {
+        spawn();
+        spawnMove();
+      }
       fill(255);
       text("Score: " + score, 650, 50);
       control.get(0).display();
@@ -99,36 +103,36 @@ void draw() {
 }
 
 void spawn() {
+  println(enemies.size());
   for (int i = 0; i < 10; i++) {
-    enemies.add(new Enemy(width, height));
+    enemies.add(new Enemy(width, height, 0));
   }
+  println(enemies.size());
 }
 void spawnMove() {
   // move them up
   for (Enemy e : enemies) {
-    while ((e.xCor > width / 2) && (e.yCor > (height * 0.1))) {
-      e.xCor -= 10;
-      e.yCor -= 10;
+    while ((e.xCor < width / 2) && (e.yCor > (height * 0.1))) {
       e.display();
+      e.xCor += 10;
+      e.yCor -= 10;
     }
     e.spawned = true;
+    int len = enemies.size() - 1;
+    for (int i = 0; i < enemies.size(); i++) {
+      if (len > enemies.size() / 2) {
+        enemies.get(i).xCor -= 20 * len + random(50);
+      }
+      if (len < enemies.size() / 2) {
+        enemies.get(i).xCor += 20 * len + random(50);
+      }
+      if (len == enemies.size() / 2) {
+      }
+      len--;
+    }
   }
 }
-  //}
-  //// separate them
-  //int len = enemies.size() - 1;
-  //for (int i = 0; i < enemies.size(); i++) {
-  //  if (len > enemies.size() / 2) {
-  //    enemies.get(i).xCor -= 20 * len + random(50);
-  //  }
-  //  if (len < enemies.size() / 2) {
-  //    enemies.get(i).xCor += 20 * len + random(50);
-  //  }
-  //  if (len == enemies.size() / 2) {
-      
-  //  }
-  //  len--;
-  //}
+  
 
 
 void mousePressed() {
@@ -199,7 +203,7 @@ void keyReleased() {
 /*
 DEBUG NOTES:
 after killing all enemies, score counter continues (done)
-enemy bullets slow down as more enemies are killed -- need a fix
+enemy bullets slow down as more enemies are killed (done)
 spawn method process - spawn first (no display) (done)
 spawnMove method process - move + display 
 ^(still buggy; need to avoid shooting until spawned is finished + fix slope of movement for aesthetics +
