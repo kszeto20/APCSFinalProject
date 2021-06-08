@@ -41,8 +41,8 @@ public class Player{
   
   void shoot() {
     ArrayList<Bullet> toRep = new ArrayList<Bullet>();
-    if (bullets.size() > 40) {
-      for (int i = 20; i < 40; i++) {
+    if (bullets.size() > 100) {
+      for (int i = 20; i < 100; i++) {
         toRep.add(bullets.get(i));
       }
       bullets = toRep;
@@ -60,24 +60,18 @@ public class Player{
           }
           else {
             float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
-            if (b.yCor + 20 < upper && b.yCor + 20 > yCor + 20) {
-              kill = true;
-            }
-            if (b.yCor < upper && b.yCor + 20 > yCor + 20) {
+            if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
               kill = true;
             }
           }
         }
         if (kill == false) {
-          for(float i = xCor + 20;i > xCor;i--){
+          for(float i = xCor + 1;i <= xCor + 20;i++){
             if (i != b.xCor) {
             }
             else {
-              float upper = (abs(i - (xCor - 20)) * 2) + yCor - 40;
-              if (b.yCor + 20 < upper && b.yCor + 20 > yCor + 20) {
-                kill = true;
-              }
-              if (b.yCor < upper && b.yCor + 20 > yCor + 20) {
+              float upper = ((i - (xCor - 20)) * 2) + yCor - 40;
+              if (b.yCor + 20 < upper && b.yCor > yCor - 40) {
                 kill = true;
               }
             }
