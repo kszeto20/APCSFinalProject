@@ -28,3 +28,5 @@ June 3rd - finished collide method, enemy bullets now kill player (fixed again),
 June 5th - changed how we removed bullets off screen and enemies that were shot, actually removes enemies now + prelim spawn method
 
 June 7th - fixed bullet speed issue and updated hitboxes for player, bullet speed is no longer proportional to the number of enemies and the top of the bullet now has proper collision with the player
+
+June 8th- fixed method kind of (random generation), need to implement random formations every level not just game.
