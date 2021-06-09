@@ -66,7 +66,6 @@ void draw() {
       fill(255);
       text("Score: " + score, 650, 50);
       control.get(0).display();
-      double prob = random(10);
       timer++;
       for (Bullet b : otherBullets) {
         b.move();
@@ -103,19 +102,19 @@ void draw() {
 }
 
 void spawn() {
-  println(enemies.size());
   for (int i = 0; i < 10; i++) {
     enemies.add(new Enemy(width, height, 0));
   }
-  println(enemies.size());
 }
+
 void spawnMove() {
   // move them up
   for (Enemy e : enemies) {
     while ((e.xCor < width / 2) && (e.yCor > (height * 0.1))) {
-      e.display();
-      e.xCor += 10;
-      e.yCor -= 10;
+        e.display();
+        e.xCor += 10;
+        e.yCor -= 10;
+      
     }
     e.spawned = true;
     int len = enemies.size() - 1;
@@ -202,13 +201,9 @@ void keyReleased() {
 
 /*
 DEBUG NOTES:
-after killing all enemies, score counter continues (done)
-enemy bullets slow down as more enemies are killed (done)
-spawn method process - spawn first (no display) (done)
 spawnMove method process - move + display 
 ^(still buggy; need to avoid shooting until spawned is finished + fix slope of movement for aesthetics +
                 need to find a way to separate enemies because they are all stack on top of one another rn)
                 
-to operate: move player all the way to the edge of the screen until spawning is finished
 
 */
