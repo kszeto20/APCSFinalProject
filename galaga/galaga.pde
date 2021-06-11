@@ -42,8 +42,8 @@ void draw() {
     background(0);
     if (sButton[4] == 0) {
       fill(255);
-      textSize(50);
-      text("\nGalaga so far", 250, 0);
+      textSize(40);
+      text("\nGalaga made by 2 cs students", 125, 0);
       fill(#FF0318);
       textSize(17);
       text("CLICK TO START", width / 2 - 75, height / 2);
