@@ -42,8 +42,8 @@ public class Player{
   
   void shoot() {
     ArrayList<Bullet> toRep = new ArrayList<Bullet>();
-    if (bullets.size() > 100) {
-      for (int i = 20; i < 100; i++) {
+    if (bullets.size() > 150) {
+      for (int i = 20; i < 150; i++) {
         toRep.add(bullets.get(i));
       }
       bullets = toRep;
