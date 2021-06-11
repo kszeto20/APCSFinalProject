@@ -24,6 +24,7 @@ public class Enemy{
     dy = 50;
     spawned = false;
     if (type == 0) {
+      xCor += random(50);
     }
     
   }
