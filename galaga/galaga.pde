@@ -95,11 +95,13 @@ void draw() {
     textSize(17);
     text("PRESS ENTER OR CLICK TO RESTART", 270, 450);
     otherBullets = new ArrayList<Bullet>();
+    enemies = new ArrayList<Enemy>();
+    bullets = new ArrayList<Bullet>();
+    score = 0;
   }
 }
 
 void spawn() {
-  enemies = new ArrayList<Enemy>();
   for (int i = 0; i < 5; i++) {
     enemies.add(new Enemy(-300, height + i * 420, 0));
   }
@@ -207,5 +209,4 @@ spawnMove method process - move + display
 ^(still buggy; need to avoid shooting until spawned is finished + fix slope of movement for aesthetics +
                 need to find a way to separate enemies because they are all stack on top of one another rn)
                 
-
 */
