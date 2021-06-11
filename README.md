@@ -11,6 +11,8 @@ https://docs.google.com/document/d/1Q7UMiH_Ij0yi7uksWHtDGH4c1utSSgY0uF96kxaX7Jc/
 
 How to Play Our Game:
 Pull all code and run with the play button on Processing.
+Use the up, down, left, and right keys to move.
+Use the space bar to shoot.
 
 Devlog
 May 23rd- began working on the project.  Made the prototype document and started on the actual code.  Made the background stars and coded basic movement for the player ship.  Movement is still janky as the directions of the movement messes up when doing sequential moves
