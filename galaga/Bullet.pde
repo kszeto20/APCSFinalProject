@@ -9,7 +9,6 @@ public class Bullet{
     yCor = y;
     // type = type of plane (enemy / player); 0 == player type, 1 == enemy type
     typeP = type;
-
   }
   
   void display() {
@@ -30,9 +29,4 @@ public class Bullet{
       yCor += 10;
     }
   }
-  
-  //void collide() {
-    
-  //}
-  // neeed a collide method with arraylist of all enemy ships
 }

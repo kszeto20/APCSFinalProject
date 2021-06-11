@@ -24,7 +24,6 @@ public class Player{
   
   void display(){
     if (kill) {
-      
     } else {
       fill(255);
       triangle(xCor - 20, yCor + 40, xCor, yCor, xCor + 20, yCor + 40);

@@ -34,7 +34,6 @@ public class BackBubbles {
   }
   
   void display() {
-    
     fill(baseC);
     ellipse(xCor, yCor, 3, 3);
   }
