@@ -96,10 +96,10 @@ void draw() {
     control.add(new Player(width, height));
     fill(#FF0318);
     textSize(50);
-    text("Game Over :(", 250, height / 2);
+    text("Game Over :(", 250, 300);
     fill(255);
     textSize(17);
-    text("PRESS ENTER OR CLICK TO RESTART", 270, 450);
+    text("PRESS ENTER OR CLICK TO RESTART", 270, height / 2);
     otherBullets = new ArrayList<Bullet>();
     enemies = new ArrayList<Enemy>();
     bullets = new ArrayList<Bullet>();
@@ -145,7 +145,7 @@ void mousePressed() {
   if ((mouseY < (sButton[1] + sButton[3])) && (mouseY > sButton[1]) && sButton[4] == 0) {
      sButton[4] = 1;
   }
-  if ((mouseY < (rButton[1] + rButton[3])) && (mouseY > rButton[1])) {
+  if ((mouseY < (sButton[1] + sButton[3])) && (mouseY > sButton[1]) && sButton[4] == 2) {
      sButton[4] = 0;
   }
 }
