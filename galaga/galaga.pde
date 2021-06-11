@@ -133,11 +133,11 @@ void spawnMove() {
 
 
 void mousePressed() {
-  if ((mouseY < (sButton[1] + sButton[3])) && (mouseY > sButton[1])) {
+  if ((mouseY < (sButton[1] + sButton[3])) && (mouseY > sButton[1]) && sButton[4] == 0) {
      sButton[4] = 1;
   }
   if ((mouseY < (rButton[1] + rButton[3])) && (mouseY > rButton[1])) {
-     sButton[4] = 1;
+     sButton[4] = 0;
   }
 }
 
