@@ -31,4 +31,4 @@ June 7th - fixed bullet speed issue and updated hitboxes for player, bullet spee
 
 June 8th- fixed method kind of (random generation), need to implement random formations every level not just game.
 
-June 11th- made restart button, fixed spawn and spawnmove methods, made spawn methods more random, fixed enemy hitboxes
+June 11th- made restart button, fixed spawn and spawnmove methods, made spawn methods more random, fixed enemy hitboxes, made high score button, made shooting timer to limit fire rate
