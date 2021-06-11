@@ -23,28 +23,17 @@ void setup() {
   bullets = new ArrayList<Bullet>();
   otherBullets = new ArrayList<Bullet>();  
   enemies = new ArrayList<Enemy>();
-  //spawn();
-  //for (int i = 0; i < 180; i += 60) {
-  //  enemies.add(new Enemy(width + i, height));
-  //}
 }
 
 void draw() {
   if (control.get(0).kill) {
-    sButton[4] = 0;
+    sButton[4] = 2;
     background(0);
     for (BackBubbles b : backs) {
       b.move();
       b.display();
     }
-    fill(#FF0318);
-    textSize(50);
-    text("Game Over :(", 250, height / 2);
-    /*rect(300, 425, 225, 50);
-    fill(255);
-    textSize(18);
-    text("PRESS HERE TO RESTART", 300, 450);
-  */} 
+  } 
   else {
     background(0);
     if (sButton[4] == 0) {
@@ -54,8 +43,8 @@ void draw() {
       fill(#FFD6D9);
       rect(300, 370, 200, 50);
       fill(#FF0318);
-      textSize(18);
-      text("PRESS HERE TO START", 300, height / 2);
+      textSize(17);
+      text("PRESS ENTER TO START", 300, height / 2);
     }
     else if (sButton[4] == 1) {
       if (enemies.size() == 0) {
@@ -98,9 +87,22 @@ void draw() {
       b.display();
     }
   }
+  if (sButton[4] == 2) {
+    control.remove(0);
+    control.add(new Player(width, height));
+    fill(#FF0318);
+    textSize(50);
+    text("Game Over :(", 250, height / 2);
+    rect(300, 425, 225, 50);
+    fill(255);
+    textSize(17);
+    text("PRESS ENTER TO RESTART", 300, 450);
+    otherBullets = new ArrayList<Bullet>();
+  }
 }
 
 void spawn() {
+  enemies = new ArrayList<Enemy>();
   for (int i = 0; i < 5; i++) {
     enemies.add(new Enemy(-300, height + i * 420, 0));
   }
@@ -158,6 +160,9 @@ void moveP(Player control) {
 void keyPressed() {  
   if(keyCode == 10 && sButton[4] == 0){
     sButton[4] = 1;
+  }
+  else if (keyCode == 10 && sButton[4] == 2) {
+    sButton[4] = 0;
   }
   else if (keyCode == 37) {
     control.get(0).left = true;
