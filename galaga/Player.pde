@@ -8,6 +8,7 @@ public class Player{
   boolean up;
   boolean down;
   boolean kill;   
+  boolean cShoot;
   
   Player(float w, float h){
     xMax = w;

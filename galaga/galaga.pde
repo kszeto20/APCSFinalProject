@@ -5,6 +5,7 @@ int[] rButton = {300, 425, 225, 50, 0};
 int score;
 int highscore;
 int timer; 
+int lShot;
 ArrayList<Bullet> bullets;
 ArrayList<Bullet> otherBullets;
 ArrayList<Enemy> enemies;
@@ -16,6 +17,7 @@ void setup() {
   score = 0;
   timer = 0;
   highscore = 0;
+  lShot = 0;
   backs = new ArrayList<BackBubbles>();
   for (int i = 0; i < width / 5; i++) {
     backs.add(new BackBubbles(width, height));
@@ -44,7 +46,7 @@ void draw() {
       text("\nGalaga so far", 250, 0);
       fill(#FF0318);
       textSize(17);
-      text("PRESS ENTER OR CLICK TO START", 270, height / 2);
+      text("CLICK TO START", width / 2 - 75, height / 2);
     }
     else if (sButton[4] == 1) {
       if (enemies.size() == 0) {
@@ -59,6 +61,7 @@ void draw() {
       text("High Score: " + highscore, 650, 75);
       control.get(0).display();
       timer++;
+      lShot++;
       for (Bullet b : otherBullets) {
         b.move();
         b.display();
@@ -124,18 +127,6 @@ void spawnMove() {
     for (int i = 0; i < enemies.size(); i++) {
       enemies.get(i).xCor += random(100);
     }
-    //int len = enemies.size() - 1;
-    //for (int i = 0; i < enemies.size(); i++) {
-    //  if (len > enemies.size() / 2) {
-    //    enemies.get(i).xCor -= 20 * len + random(50);
-    //  }
-    //  if (len < enemies.size() / 2) {
-    //    enemies.get(i).xCor += 20 * len + random(50);
-    //  }
-    //  if (len == enemies.size() / 2) {
-    //  }
-    //  len--;
-    //}
   }
 }
   
@@ -187,7 +178,10 @@ void keyPressed() {
     }
     else {
       if (keyCode == 32) {
-        control.get(0).shoot();
+        if (lShot > 10) {
+          control.get(0).shoot();
+          lShot = 0;
+        }
       }
     }
   }
