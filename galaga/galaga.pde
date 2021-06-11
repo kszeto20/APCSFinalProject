@@ -159,7 +159,10 @@ void moveP(Player control) {
 }
 
 void keyPressed() {
-  if (keyCode == 37) {
+  if(keyCode == 0 && sButton[4] == 0){
+    sButton[4] = 1;
+  }
+  else if (keyCode == 37) {
     control.get(0).left = true;
   }
   else if (keyCode == 38) {

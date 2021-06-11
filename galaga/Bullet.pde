@@ -13,7 +13,12 @@ public class Bullet{
   }
   
   void display() {
-    fill(255, 0, 0);
+    if(typeP == 1){
+      fill(255, 0, 0);
+    }
+    else{
+      fill(255);
+    }
     rect(xCor - 2, yCor, 5, 20, 2);
   }
   
