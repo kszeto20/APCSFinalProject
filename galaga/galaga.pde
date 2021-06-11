@@ -40,11 +40,9 @@ void draw() {
       fill(255);
       textSize(50);
       text("\nGalaga so far", 250, 0);
-      fill(#FFD6D9);
-      rect(300, 370, 200, 50);
       fill(#FF0318);
       textSize(17);
-      text("PRESS ENTER TO START", 300, height / 2);
+      text("PRESS ENTER OR CLICK TO START", 270, height / 2);
     }
     else if (sButton[4] == 1) {
       if (enemies.size() == 0) {
@@ -93,10 +91,9 @@ void draw() {
     fill(#FF0318);
     textSize(50);
     text("Game Over :(", 250, height / 2);
-    rect(300, 425, 225, 50);
     fill(255);
     textSize(17);
-    text("PRESS ENTER TO RESTART", 300, 450);
+    text("PRESS ENTER OR CLICK TO RESTART", 270, 450);
     otherBullets = new ArrayList<Bullet>();
   }
 }
