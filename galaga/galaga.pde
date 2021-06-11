@@ -115,18 +115,21 @@ void spawnMove() {
         e.xCor += 10;
     }
     e.spawned = true;
-    int len = enemies.size() - 1;
     for (int i = 0; i < enemies.size(); i++) {
-      if (len > enemies.size() / 2) {
-        enemies.get(i).xCor -= 20 * len + random(50);
-      }
-      if (len < enemies.size() / 2) {
-        enemies.get(i).xCor += 20 * len + random(50);
-      }
-      if (len == enemies.size() / 2) {
-      }
-      len--;
+      enemies.get(i).xCor += random(100);
     }
+    //int len = enemies.size() - 1;
+    //for (int i = 0; i < enemies.size(); i++) {
+    //  if (len > enemies.size() / 2) {
+    //    enemies.get(i).xCor -= 20 * len + random(50);
+    //  }
+    //  if (len < enemies.size() / 2) {
+    //    enemies.get(i).xCor += 20 * len + random(50);
+    //  }
+    //  if (len == enemies.size() / 2) {
+    //  }
+    //  len--;
+    //}
   }
 }
   
