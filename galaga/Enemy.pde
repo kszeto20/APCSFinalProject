@@ -83,21 +83,23 @@ public class Enemy{
           if(i != b.xCor){
            }
           else{ 
-            if(b.yCor < yCor - 40 + factor && b.yCor - 20 > yCor - 60){
+            if(b.yCor < yCor - 40 + factor && b.yCor + 20> yCor - 60){
               kill = true;
               score += 100;
             }  
           }
         }
-        for(float i = xCor + 20;i > xCor;i--){
-          float factor = abs(i - (xCor + 20)) * 2;
-          if(i != b.xCor){
-           }
-          else{ 
-            if(b.yCor < yCor - 40 + factor && b.yCor - 20 > yCor - 60){
-              kill = true;
-              score += 100;
-            }  
+        if(kill == false){
+          for(float i = xCor + 20;i > xCor;i--){
+            float factor = (i - (xCor + 20)) * 2;
+            if(i != b.xCor){
+             }
+            else{ 
+              if(b.yCor < yCor - 40 + factor && b.yCor + 20 > yCor - 60){
+                kill = true;
+                score += 100;
+              }  
+            }
           }
         }
       }
