@@ -83,7 +83,7 @@ public class Enemy{
           if(i != b.xCor){
            }
           else{ 
-            if(b.yCor < yCor - 40 + factor && b.yCor + 20> yCor - 60){
+            if(b.yCor < yCor - 40 + factor && b.yCor + 20 > yCor - 60){
               kill = true;
               score += 100;
             }  
