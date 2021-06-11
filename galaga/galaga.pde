@@ -122,7 +122,7 @@ void spawnMove() {
     }
     e.spawned = true;
     for (int i = 0; i < enemies.size(); i++) {
-      enemies.get(i).xCor += random(150);
+      enemies.get(i).xCor += random(100);
     }
     //int len = enemies.size() - 1;
     //for (int i = 0; i < enemies.size(); i++) {
