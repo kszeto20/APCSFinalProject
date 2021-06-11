@@ -47,7 +47,6 @@ void draw() {
   */} 
   else {
     background(0);
-    //spawnMove();
     if (sButton[4] == 0) {
       fill(255);
       textSize(50);
@@ -102,8 +101,8 @@ void draw() {
 }
 
 void spawn() {
-  for (int i = 0; i < 10; i++) {
-    enemies.add(new Enemy(width, height, 0));
+  for (int i = 0; i < 5; i++) {
+    enemies.add(new Enemy(-300, height + i * 420, 0));
   }
 }
 
@@ -113,8 +112,6 @@ void spawnMove() {
     while ((e.xCor < width / 2) && (e.yCor > (height * 0.1))) {
         e.display();
         e.xCor += 10;
-        e.yCor -= 10;
-      
     }
     e.spawned = true;
     int len = enemies.size() - 1;
@@ -158,8 +155,8 @@ void moveP(Player control) {
   }
 }
 
-void keyPressed() {
-  if(keyCode == 0 && sButton[4] == 0){
+void keyPressed() {  
+  if(keyCode == 10 && sButton[4] == 0){
     sButton[4] = 1;
   }
   else if (keyCode == 37) {

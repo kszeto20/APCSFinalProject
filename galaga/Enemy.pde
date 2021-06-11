@@ -18,15 +18,14 @@ public class Enemy{
   
   Enemy(float w, float h, int type){
     yMax = h;
-    xCor = w / 2;
+    xCor = w;
     yCor = h * 0.1;
     dx = 5;
     dy = 50;
     spawned = false;
     if (type == 0) {
-      xCor = 0;
-      yCor = h / 2;
     }
+    
   }
   
   void display(){
