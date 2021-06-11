@@ -203,13 +203,3 @@ void keyReleased() {
     }
   }
 }
-
-
-
-/*
-DEBUG NOTES:
-spawnMove method process - move + display 
-^(still buggy; need to avoid shooting until spawned is finished + fix slope of movement for aesthetics +
-                need to find a way to separate enemies because they are all stack on top of one another rn)
-                
-*/
