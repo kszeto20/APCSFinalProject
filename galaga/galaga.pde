@@ -3,6 +3,7 @@ ArrayList<BackBubbles> backs;
 int[] sButton = {300, 370, 200, 50, 0};
 int[] rButton = {300, 425, 225, 50, 0};
 int score;
+int highscore;
 int timer; 
 ArrayList<Bullet> bullets;
 ArrayList<Bullet> otherBullets;
@@ -14,6 +15,7 @@ void setup() {
   size (800,800);
   score = 0;
   timer = 0;
+  highscore = 0;
   backs = new ArrayList<BackBubbles>();
   for (int i = 0; i < width / 5; i++) {
     backs.add(new BackBubbles(width, height));
@@ -51,6 +53,10 @@ void draw() {
       }
       fill(255);
       text("Score: " + score, 650, 50);
+      if(score > highscore){
+        highscore = score;
+      }
+      text("High Score: " + highscore, 650, 75);
       control.get(0).display();
       timer++;
       for (Bullet b : otherBullets) {
@@ -103,7 +109,7 @@ void draw() {
 
 void spawn() {
   for (int i = 0; i < 5; i++) {
-    enemies.add(new Enemy(-300, height + i * 420, 0));
+    enemies.add(new Enemy(-400 + random(200), height + i * 420, 0));
   }
 }
 
@@ -116,7 +122,7 @@ void spawnMove() {
     }
     e.spawned = true;
     for (int i = 0; i < enemies.size(); i++) {
-      enemies.get(i).xCor += random(100);
+      enemies.get(i).xCor += random(150);
     }
     //int len = enemies.size() - 1;
     //for (int i = 0; i < enemies.size(); i++) {
